@@ -7,7 +7,7 @@ char gender[20];
 char phone[20];
 char email[20];
 };
-void deleteStudent() //Delete Student Profile
+void deleteStudent() 
 {
 FILE *fRead, *fWrite;
 char *TextFile;
@@ -69,7 +69,7 @@ profile.gender, profile.phone, profile.email);
 }
 fclose(fPtr1);
 }
-void newStudent() //Add New Student Profile
+void newStudent() 
 {
 int x;
 struct sNode st;
@@ -93,7 +93,7 @@ printf("Email\t: ");
 scanf("%s", st.email);
 Export_Profile(st);
 }
-void menu() //Main Menu to select option
+void menu() 
 {
 int n;
 printf("\n**********************************************");
