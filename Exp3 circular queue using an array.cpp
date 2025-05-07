@@ -26,7 +26,7 @@ count =0;
 this->size= size;
 q= new int[size];
 }
-// Check if the queue is full
+
 
 bool Queue::isFull()
 {
@@ -43,7 +43,7 @@ return true;
 else
 return false;
 }
-// Adding an item
+
 void Queue::enQueue(int item)
 {
 if (isFull())
@@ -56,7 +56,7 @@ rear = (rear + 1) % size;
 q[rear] = item;
 count++;
 }
-// Removing an item
+
 int Queue::deQueue()
 {
 int item;
@@ -72,7 +72,7 @@ front= (front+1)%size;
 count--;
 return item;
 }
-// Removing an item
+
 int Queue::top()
 {
 int item;
@@ -88,7 +88,7 @@ return item;
 
 void Queue::display()
 {
-// Function to display status of Circular Queue
+
 int c,f;
 if (isEmpty())
 {
