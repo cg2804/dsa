@@ -57,7 +57,7 @@ class student_data
             }
         }
 
-        void sort_names(int n)  //insertion sort for sorting names
+        void sort_names(int n)  
         {
             for (int k=n-1; k>0; k--)
             {
@@ -72,15 +72,15 @@ class student_data
             }
         }
 
-        void sort_SGPA(int l, int k)  //sorting SGPA using quick sorting
+        void sort_SGPA(int l, int k)  
         {
             int r = k-1;
             if (l>=r) return;
             int i=l;
             int j=r+1;
             struct profile prec;
-            int p = std_db[l].SGPA; //Select pivot element
-            prec = std_db[l]; //temporarily storing pivot record prec
+            int p = std_db[l].SGPA; 
+            prec = std_db[l]; 
             while(1)
             {
                 do{ i++; } while (std_db[i].SGPA < p && i <= r);
@@ -93,18 +93,18 @@ class student_data
             }
             std_db[l] = std_db[j];
             std_db[j] = prec;
-            sort_SGPA(l,j); //left list
-            sort_SGPA(j+1,r); //right list
+            sort_SGPA(l,j); 
+            sort_SGPA(j+1,r); 
             student_data :: view(10);
         }
 
-        void sort_RollNo()  //sorting roll no. in ascending order using bubble sort
+        void sort_RollNo()  
         {
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < n-1; j++)
                 {
-                    if((std_db[j].Roll_no) < (std_db[j+1].Roll_no)) //Swapping
+                    if((std_db[j].Roll_no) < (std_db[j+1].Roll_no)) 
                     {
                         struct profile temp;
                         temp = std_db[j];
