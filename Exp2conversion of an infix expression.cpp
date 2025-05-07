@@ -5,7 +5,7 @@ using namespace std;
 class InToPost
 {
 char input[50];
-stack <char> st;// st is stack of characters
+stack <char> st;
 public:
 InToPost();
 bool isOpertator(char ch);
@@ -17,19 +17,19 @@ void InToPost::convert()
 {
 int k=0,icp,isp;
 char temp;
-while(input[k] !='\0')// do for all input token
+while(input[k] !='\0')
 {
 if(isOpertator(input[k]))
-{// input is operator
+{
 if(input[k]=='(')
-{// input is opening bracket
+{
 st.push(input[k]);
-k++;//go to next input or advance
+k++;
 }
-else// input is not '(' bracket
+else
 {
 if(input[k]== ')')
-{// pop and display till opening bracket
+{
 
 do
 {
@@ -40,34 +40,34 @@ cout<<temp;
 }
 st.pop();
 }while(temp != '(');
-k++;//go to next input or advance
+k++;
 }
-else// input is not '(' or ')' bracket
+else
 {
 icp = getICP(input[k]);
 isp = getISP();
 if(icp > isp)
-{// if icp > isp
+{
 st.push(input[k]);
-k++;//go to next input or advance
+k++;
 }
 else
-{// if icp < = isp
-cout<<st.top();// pop and out put
-st.pop();// remove it from stack
+{
+cout<<st.top();
+st.pop();
 }
 }
 }
 
 }
 else
-{// input is operand
+{
 cout<<input[k];
 
-k++;//go to next input or advance
+k++;
 }
 }
-//pop and display all operators on stack
+
 while(!st.empty())
 {
 cout<<st.top();
@@ -79,7 +79,7 @@ InToPost::InToPost()
 cout<<"\n Enter the infix expression";
 cin>>input;
 }
-//This function returns true if input ch is operator else it returns false
+
 bool InToPost::isOpertator(char ch)
 {
 if(ch=='+'||ch=='-'||ch=='*'||ch=='/'||ch=='^'||ch=='('||ch==')')
