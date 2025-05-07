@@ -1,7 +1,7 @@
 #include <iostream>
 #define MAX_VALUE 65536
 using namespace std;
-class N { //node declaration
+class N { 
 public:
 int k;
 N *l, *r;
@@ -11,7 +11,7 @@ class ThreadedBinaryTree {
 private:
 N *root;
 public:
-ThreadedBinaryTree() { //constructor to initialize the variables
+ThreadedBinaryTree() { 
 root= new N();
 root->r= root->l= root;
 root->leftTh = true;
@@ -20,12 +20,12 @@ root->k = MAX_VALUE;
 void insert(int key) {
 N *p = root;
 for (;;) {
-if (p->k< key) { //move to right thread
+if (p->k< key) { 
 if (p->rightTh)
 break;
 p = p->r;
 }
-else if (p->k > key) { // move to left thread
+else if (p->k > key) { 
 if (p->leftTh)
 break;
 p = p->l;
@@ -51,7 +51,7 @@ p->l = temp;
 p->leftTh = false;
 }
 }
-void inorder() { //print the tree
+void inorder() { 
 N *temp = root, *p;
 for (;;) {
 p = temp;
